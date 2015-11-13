@@ -2,7 +2,7 @@
 
 
 <%= simple_form_for @user do |f| %>
-  <%= f.input :name, label: 'Your name please', error: 'Name is mandatory, please specify one' %>
+  <%= f.input :name, label: 'name', error: 'Make a name!' %>
   <%= f.input :password, hint: 'No special characters.' %>
   <%= f.input :email, placeholder: 'user@domain.com' %>
   <%= f.button :submit %>

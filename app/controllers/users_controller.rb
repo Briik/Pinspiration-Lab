@@ -6,8 +6,7 @@ def index
 end
 
 def show
-  #@user = User.find(params[:id])
-  @user = current_user
+  @user = User.find(params[:id])
 end
 
 def new
@@ -15,7 +14,7 @@ def new
 end
 
 def create
-  @user = User.new(artist_params)
+  @user = User.new(user_params)
   if @user.save
     flash[:notice] = "#{@user.name} was successfully created."
     redirect_to @user
@@ -30,7 +29,7 @@ end
 
 def update
   @user = User.find(params[:id])
-  @user.update(pins_params)
+  @user.update(user_params)
   redirect_to user_path(@user)
 end
 
@@ -42,6 +41,6 @@ end
 
 private
 def user_params
-  params.require(:user).permit(:name, :email)
+  params.require(:user).permit(:user_id, :name, :email)
 end
 end
