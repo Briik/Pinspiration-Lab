@@ -1,0 +1,11 @@
+<h2>Edit User</h2>
+
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :name, label: 'Your name please', error: 'Name is mandatory, please specify one' %>
+  <%= f.input :password, hint: 'No special characters.' %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Delete!', user_path(@user), method: :delete, class: 'delete' %>

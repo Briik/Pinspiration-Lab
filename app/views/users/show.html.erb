@@ -1,0 +1,14 @@
+<h2><%= @user.name %> <%= link_to "(edit)", edit_user_path(@user) %></h2>
+<h4><%= @user.name %></h4>
+
+<h3>Pins <%= link_to "(+)", new_user_pin_path(@user) %></h3>
+<ul>
+  <% @user.pins.each do |pin| %>
+    <li>
+      <%= link_to pin.title, user_pin_path(pin.user.id, pin) %><br>
+      <%= image_tag pin.photo_url %><br>
+      <%= link_to 'Attached Video', pin.youtube_link %>
+    </li>
+
+  <% end %>
+</ul>

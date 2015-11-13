@@ -1,0 +1,13 @@
+<form action="/users/:user_id/pins" method="post" >
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="title">Title:</label>
+  <input name="pin[title]">
+
+  <label for="photo_url">Photo URL:</label>
+  <input name="pin[photo_url]">
+
+  <label for="youtube_link">YouTube Video Link:</label>
+  <input name="pin[youtube_link]">
+
+  <input type="submit" value="Create">
+</form>

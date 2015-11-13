@@ -1,0 +1,14 @@
+<h2> Pins Index - Here's all our user content </h2>
+
+<% if current_user  %>
+  <%= link_to "Your Pins", user_path(current_user.id) %>
+  <% else %>
+  <%= link_to "Sign Up for Pinspiration!", new_user_registration_path %>
+  <% end %>
+<ul>
+  <% @pins.each do |pin| %>
+  <li>
+    <%= link_to pin.title, user_pin_path(pin.user.id, pin) %>
+</li>
+  <% end %>
+</ul>

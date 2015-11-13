@@ -1,0 +1,9 @@
+<p>currently browsing pins from <%= @user.email %></p>
+
+<% if current_user.id == @pin.user_id %>
+<%= link_to 'Edit This Pin', edit_user_pin_path(current_user, @pin.id) %>
+<% end %><br>
+
+<%= @pin.title %><br>
+<%= image_tag @pin.photo_url %><br>
+<%= link_to 'Attached Video', @pin.youtube_link %>

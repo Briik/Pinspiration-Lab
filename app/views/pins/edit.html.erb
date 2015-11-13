@@ -1,0 +1,23 @@
+<h2> Edit the post titled <%= @pin.title %></h2>
+
+<form action="/users/<%= @user %>/pins/<%= @pin_id %>" method="post" >
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="title">Title:</label>
+  <input name="pin[title]" value="<%= @pin.title %>">
+
+  <label for="photo_url">Photo URL:</label>
+  <input name="pin[photo_url]" value="<%= @pin.photo_url %>">
+
+  <label for="youtube_link">YouTube Video Link:</label>
+  <input name="pin[youtube_link]" value="<%= @pin.youtube_link %>">
+
+  <input type="submit" value="Update">
+</form>
+
+<form action="/users/<%= current_user.id %>/pins/<%= @pin.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>
